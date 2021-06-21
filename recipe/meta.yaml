@@ -1,13 +1,13 @@
 {% set name = "pyfd" %}
-{% set version = "4.5.4" %}
+{% set version = "4.5.5" %}
 
 package:
-   name: "{{ name }}"
-   version: "{{ version }}"
+  name: {{ name }}
+  version: {{ version }}
 
 source:
-   url: http://software.igwn.org/lscsoft/source/{{ name }}-{{ version }}.tar.gz
-   sha256: 69361e042e02f21f4c2aef548458c699da82b438570f104950f220b008a05223
+  url: http://software.igwn.org/lscsoft/source/{{ name }}-{{ version }}.tar.gz
+  sha256: 209d1af1e1e610ab5dadc5d20e8e363b80b20f1ada6498208b24cad7dc1e5f7b
 
 build:
   run_exports:
@@ -20,7 +20,7 @@ requirements:
     - {{ compiler('c') }}
     - cmake >=3.12.0
     - make  # [unix]
-  host:  
+  host:
     - fd >=8.38.0
     - python
     - ctypesgen >=1.0.2
@@ -32,13 +32,13 @@ test:
     - PyFd
 
 about:
-  home: "https://git.ligo.org/virgo/virgoapp/PyFd"
-  license: "GPL-3.0-or-later"
-  license_family: "GPL"
-  license_file: "LICENSE"
-  summary: "Python binding for the Fd Library"
+  home: https://git.ligo.org/virgo/virgoapp/PyFd
+  license: GPL-3.0-or-later
+  license_family: GPL
+  license_file: LICENSE
+  summary: Python binding for the Fd Library
 
 extra:
   recipe-maintainers:
-      - rhyspoulton
-      - fcarbogn 
+    - rhyspoulton
+    - fcarbogn
