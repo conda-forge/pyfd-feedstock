@@ -1,5 +1,5 @@
 {% set name = "pyfd" %}
-{% set version = "4.5.7" %}
+{% set version = "4.5.9" %}
 
 package:
   name: {{ name }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: http://software.igwn.org/lscsoft/source/{{ name }}-{{ version }}.tar.gz
-  sha256: acb5226a60a33645780669fe1c0cca58d4e56aab8397c7e6c794d780f6096732
+  sha256: d650940a4bbe07de91be512ce4c1b6f40192d206fb18ca29ae608801dfed67af
 
 build:
   run_exports:
     - {{ pin_subpackage("pyfd", max_pin="x") }}
-  number: 2
+  number: 0
   skip: true  # [not linux]
 
 requirements:
@@ -21,7 +21,7 @@ requirements:
     - cmake >=3.12.0
     - make  # [unix]
   host:
-    - fd >=8.38.0
+    - fd >=8.43.7
     - python
     - ctypesgen >=1.0.2
   run:
