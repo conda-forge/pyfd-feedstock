@@ -12,7 +12,7 @@ source:
 build:
   run_exports:
     - {{ pin_subpackage("pyfd", max_pin="x") }}
-  number: 0
+  number: 1
   skip: true  # [not linux]
 
 requirements:
