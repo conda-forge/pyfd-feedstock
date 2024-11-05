@@ -12,12 +12,13 @@ source:
 build:
   run_exports:
     - {{ pin_subpackage("pyfd", max_pin="x") }}
-  number: 0
+  number: 1
   skip: true  # [not linux]
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - cmake >=3.12.0
     - make  # [unix]
   host:
