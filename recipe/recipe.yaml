@@ -11,6 +11,8 @@ package:
 source:
   url: http://software.igwn.org/lscsoft/source/${{ name }}-${{ version }}.tar.gz
   sha256: e625d1ffdd135ed24fd9340c0659b4aff70003c9a021136b7b62373a23cb0783
+  patches:
+    - 0001-Use-IS_WRITABLE-unary-test.patch
 
 build:
   number: 1
