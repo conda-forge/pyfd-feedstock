@@ -2,20 +2,22 @@ schema_version: 1
 
 context:
   name: pyfd
-  version: 4.5.10
+  version: "4.5.10"
+  version_parts: ${{ version | split(".") }}
+  virgo_version: "v${{ version_parts[0] }}r${{ version_parts[1] }}p${{ version_parts[2] }}"
 
 package:
   name: ${{ name }}
   version: ${{ version }}
 
 source:
-  url: http://software.igwn.org/lscsoft/source/${{ name }}-${{ version }}.tar.gz
-  sha256: e625d1ffdd135ed24fd9340c0659b4aff70003c9a021136b7b62373a23cb0783
+  url: https://git.ligo.org/virgo/virgoapp/PyFd/-/archive/${{ virgo_version }}/PyFd-${{ virgo_version }}.tar.gz
+  sha256: a8d0dd593fcd9d850101bddd7226128077973f1f0a3fc03d4b723b66ea27997b
   patches:
     - 0001-Use-IS_WRITABLE-unary-test.patch
 
 build:
-  number: 1
+  number: 2
   skip: not linux
 
 requirements:
@@ -42,6 +44,7 @@ tests:
 about:
   summary: Python binding for the Fd Library
   homepage: https://git.ligo.org/virgo/virgoapp/PyFd
+  repository: https://git.ligo.org/virgo/virgoapp/PyFd.git
   license: GPL-3.0-or-later
   license_file: LICENSE
 
