@@ -1,13 +1,14 @@
 schema_version: 1
 
 context:
-  name: pyfd
   version: "4.5.10"
   version_parts: ${{ version | split(".") }}
   virgo_version: "v${{ version_parts[0] }}r${{ version_parts[1] }}p${{ version_parts[2] }}"
+  # dependencies
+  fd_version: "8.43.7"
 
 package:
-  name: ${{ name }}
+  name: pyfd
   version: ${{ version }}
 
 source:
@@ -29,7 +30,7 @@ requirements:
     - pkg-config
   host:
     - ctypesgen >=1.0.2
-    - fd >=8.43.7
+    - fd ${{ fd_version }}.*
     - python
   run:
     - python
