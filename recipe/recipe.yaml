@@ -18,7 +18,7 @@ source:
     - 0001-Use-IS_WRITABLE-unary-test.patch
 
 build:
-  number: 2
+  number: 3
   skip: not linux
 
 requirements:
